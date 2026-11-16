@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+<div class="app" id="app">
+
+    <header class="header">
+        <div class="logo">✦ Language Learning</div>
+        <div class="header-label">ENGLISH PRACTICE</div>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <span class="tag">YOUR DAILY PRACTICE</span>
+            <h1>Learn something<br><span>new every day.</span></h1>
+            <p>Перевір свої знання англійської мови!</p>
+        </section>
+
+        <!-- Вибір рівня -->
+        <section class="level-selection" id="levelSelection">
+            <div class="section-heading">
+                <h2>Обери свій рівень</h2>
+                <p>Наскільки добре ти знаєш англійську?</p>
+            </div>
+
+            <div class="level-grid">
+
+                <div class="level-card">
+                    <div class="level-icon">🌱</div>
+                    <span class="level-label">BEGINNER</span>
+                    <h3>A1</h3>
+                    <p>Початковий рівень</p>
+                    <button class="level-btn" data-level="A1">
+                        Обрати рівень →
+                    </button>
+                </div>
+
+                <div class="level-card featured">
+                    <div class="level-icon">🌸</div>
+                    <span class="level-label">INTERMEDIATE</span>
+                    <h3>A2–B1</h3>
+                    <p>Середній рівень</p>
+                    <button class="level-btn" data-level="A2-B1">
+                        Обрати рівень →
+                    </button>
+                </div>
+
+                <div class="level-card">
+                    <div class="level-icon">✨</div>
+                    <span class="level-label">ADVANCED</span>
+                    <h3>B2</h3>
+                    <p>Високий рівень</p>
+                    <button class="level-btn" data-level="B2">
+                        Обрати рівень →
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Статистика тесту -->
+        <section class="stats">
+            <div class="stat">
+                <span>Завдання</span>
+                <strong id="progress">01 / 10</strong>
+            </div>
+
+            <div class="stat">
+                <span>Правильно</span>
+                <strong class="correct" id="correct">0</strong>
+            </div>
+
+            <div class="stat">
+                <span>Неправильно</span>
+                <strong class="wrong" id="wrong">0</strong>
+            </div>
+        </section>
+
+        <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <!-- Картка зі словом -->
+        <section class="exercise">
+            <div class="exercise-top">
+                <span class="tag" id="currentLevel">LEVEL A1</span>
+                <span class="word-number" id="wordNumber">WORD 01</span>
+            </div>
+
+            <div class="word-card" id="wordCard">
+                <div class="card-icon">✧</div>
+                <p class="word-label">Як перекладається?</p>
+                <h2 id="englishWord">Beautiful</h2>
+                <p class="card-hint">Введи переклад українською</p>
+            </div>
+
+            <div class="answer-area">
+                <label for="answer">Твоя відповідь</label>
+                <input
+                    type="text"
+                    id="answer"
+                    placeholder="Введи переклад..."
+                    autocomplete="off"
+                >
+                <p class="message" id="message"></p>
+            </div>
+
+            <button id="checkButton" class="check-button">
+                Перевірити відповідь →
+            </button>
+
+            <p class="tip">✦ Натисни на картку або кнопку, щоб перевірити відповідь</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <span>LANGUAGE LEARNING</span>
+        <span>Practice makes progress ✦</span>
+    </footer>
+
+</div>
+
+<!-- Модальне вікно результатів -->
+<div class="modal-overlay" id="resultModal">
+    <div class="modal">
+        <div class="modal-icon" id="resultIcon">🏆</div>
+
+        <span class="tag">YOUR RESULTS</span>
+
+        <h2>Practice completed!</h2>
+        <p class="result-description">Твої результати тестування</p>
+
+        <div class="result-score" id="percentage">0%</div>
+        <h3 id="knowledgeLevel">Початковий рівень</h3>
+
+        <div class="result-stats">
+            <div>
+                <span>Правильно</span>
+                <strong id="finalCorrect">0</strong>
+            </div>
+
+            <div>
+                <span>Неправильно</span>
+                <strong id="finalWrong">0</strong>
+            </div>
+        </div>
+
+        <button id="restartButton" class="check-button">
+            Спробувати ще раз ↻
+        </button>
+
+        <button id="chooseLevelButton" class="secondary-button">
+            Обрати інший рівень
+        </button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

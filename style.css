@@ -1,0 +1,624 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f7f5fb;
+    color: #39334b;
+    min-height: 100vh;
+}
+
+.app {
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: auto;
+    padding: 28px 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #e9e3f0;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 750;
+    color: #7961a6;
+}
+
+.header-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #a49ab4;
+    font-weight: 700;
+}
+
+.container {
+    width: 100%;
+    max-width: 650px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.intro {
+    margin-bottom: 30px;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #9278b9;
+    background: #eee8f7;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.intro h1 {
+    font-size: clamp(36px, 7vw, 52px);
+    line-height: 1.13;
+    margin: 17px 0 12px;
+    letter-spacing: -1.5px;
+    color: #39334b;
+}
+
+.intro h1 span {
+    color: #9a7bc5;
+}
+
+.intro p {
+    font-size: 14px;
+    color: #91899e;
+}
+
+/* Вибір рівня */
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: 23px;
+    color: #514765;
+    margin-bottom: 7px;
+}
+
+.section-heading p {
+    font-size: 13px;
+    color: #a29aac;
+}
+
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+}
+
+.level-card {
+    padding: 20px 13px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #eee9f4;
+    border-radius: 17px;
+    box-shadow: 0 5px 18px #64527a08;
+    transition: 0.25s;
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+    border-color: #cbb9e2;
+    box-shadow: 0 10px 25px #9275b91a;
+}
+
+.level-card.featured {
+    background: #f2edf9;
+    border-color: #dfd1ef;
+}
+
+.level-icon {
+    font-size: 27px;
+    margin-bottom: 13px;
+}
+
+.level-label {
+    display: block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #a18bbd;
+    margin-bottom: 7px;
+}
+
+.level-card h3 {
+    font-size: 25px;
+    color: #665182;
+    margin-bottom: 5px;
+}
+
+.level-card p {
+    font-size: 11px;
+    color: #a29aac;
+    min-height: 28px;
+    margin-bottom: 15px;
+}
+
+.level-btn {
+    width: 100%;
+    padding: 11px 5px;
+    border: none;
+    border-radius: 9px;
+    background: #eee8f6;
+    color: #7961a6;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.level-btn:hover {
+    background: #9275b9;
+    color: white;
+}
+
+.featured .level-btn {
+    background: #9275b9;
+    color: white;
+}
+
+.featured .level-btn:hover {
+    background: #8063a8;
+}
+
+/* Статистика */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+    margin-bottom: 19px;
+}
+
+.stat {
+    background: #fff;
+    border: 1px solid #eee9f4;
+    border-radius: 15px;
+    padding: 17px;
+    box-shadow: 0 4px 15px #64527a08;
+}
+
+.stat span {
+    display: block;
+    font-size: 12px;
+    color: #a29aac;
+    margin-bottom: 9px;
+}
+
+.stat strong {
+    font-size: 23px;
+    color: #514765;
+}
+
+.stat .correct {
+    color: #61a98b;
+}
+
+.stat .wrong {
+    color: #d77f89;
+}
+
+.progress-track {
+    width: 100%;
+    height: 7px;
+    background: #e9e3f0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 10%;
+    background: linear-gradient(90deg, #a78bcf, #c3a8df);
+    border-radius: 20px;
+    transition: width 0.4s;
+}
+
+/* Картка зі словом */
+
+.exercise {
+    padding: 27px;
+    background: #fff;
+    border: 1px solid #eee9f4;
+    border-radius: 22px;
+    box-shadow: 0 10px 35px #64527a0b;
+}
+
+.exercise-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.word-number {
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: #a18bbd;
+    font-weight: 700;
+}
+
+.word-card {
+    text-align: center;
+    margin: 24px 0;
+    padding: 40px 15px;
+    border-radius: 17px;
+    cursor: pointer;
+    background: #f2edf9;
+    border: 1px solid #e8def3;
+    transition: 0.25s;
+}
+
+.word-card:hover {
+    transform: translateY(-3px);
+    background: #eee7f7;
+    box-shadow: 0 8px 22px #9176b31a;
+}
+
+.card-icon {
+    font-size: 28px;
+    color: #a88ccf;
+    margin-bottom: 13px;
+}
+
+.word-label {
+    font-size: 13px;
+    color: #9589a8;
+}
+
+.word-card h2 {
+    font-size: 39px;
+    color: #665182;
+    margin: 13px 0;
+    letter-spacing: -1px;
+}
+
+.card-hint {
+    font-size: 12px;
+    color: #a69bb5;
+}
+
+.answer-area label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #62576f;
+    margin-bottom: 10px;
+}
+
+.answer-area input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #e7e1ed;
+    border-radius: 12px;
+    background: #fcfbfe;
+    color: #39334b;
+    outline: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.answer-area input:focus {
+    border-color: #a88ccf;
+    box-shadow: 0 0 0 3px #a88ccf20;
+    background: #fff;
+}
+
+.answer-area input::placeholder {
+    color: #b5adbf;
+}
+
+.answer-area input:disabled {
+    background: #f5f2f8;
+    color: #8c829a;
+}
+
+.message {
+    min-height: 23px;
+    font-size: 12px;
+    margin-top: 9px;
+}
+
+.message.success {
+    color: #55a27e;
+}
+
+.message.error {
+    color: #d57683;
+}
+
+.check-button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: #9275b9;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.check-button:hover {
+    background: #8063a8;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px #9275b933;
+}
+
+.check-button:disabled {
+    opacity: 0.5;
+    cursor: default;
+    transform: none;
+}
+
+.tip {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 11px;
+    color: #aaa1b5;
+}
+
+/* Нижня частина сторінки */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 20px;
+    border-top: 1px solid #e9e3f0;
+    color: #a49bad;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+/* Модальне вікно */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: #39304780;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 10;
+}
+
+.modal {
+    width: 100%;
+    max-width: 400px;
+    padding: 35px 25px;
+    border-radius: 23px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #eee5f5;
+    box-shadow: 0 20px 60px #34274730;
+    animation: appear 0.3s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.modal h2 {
+    margin: 16px 0 8px;
+    font-size: 25px;
+    color: #4b405e;
+}
+
+.result-description {
+    font-size: 13px;
+    color: #a29aac;
+}
+
+.result-score {
+    font-size: 57px;
+    font-weight: 800;
+    color: #9678be;
+    margin: 20px 0 5px;
+}
+
+.modal h3 {
+    color: #65a88b;
+    margin-bottom: 22px;
+    font-size: 16px;
+}
+
+.result-stats {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.result-stats div {
+    flex: 1;
+    padding: 16px;
+    background: #f5f1fa;
+    border-radius: 13px;
+}
+
+.result-stats span,
+.result-stats strong {
+    display: block;
+}
+
+.result-stats span {
+    font-size: 11px;
+    color: #9b92a8;
+    margin-bottom: 8px;
+}
+
+.result-stats strong {
+    font-size: 23px;
+    color: #625477;
+}
+
+.secondary-button {
+    width: 100%;
+    margin-top: 11px;
+    padding: 14px;
+    border: 1px solid #e5dced;
+    border-radius: 11px;
+    background: #f6f2fa;
+    color: #7961a6;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.secondary-button:hover {
+    background: #eee7f7;
+}
+
+/* Перемикання екранів */
+
+.stats,
+.progress-track,
+.exercise {
+    display: none;
+}
+
+.app.started .stats {
+    display: grid;
+}
+
+.app.started .progress-track,
+.app.started .exercise {
+    display: block;
+}
+
+.app.started .level-selection {
+    display: none;
+}
+
+/* Адаптивність */
+
+@media (max-width: 600px) {
+    .app {
+        padding: 20px 16px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .header-label {
+        font-size: 8px;
+    }
+
+    .container {
+        padding: 35px 0;
+    }
+
+    .level-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .level-card {
+        display: grid;
+        grid-template-columns: 45px 1fr;
+        grid-template-rows: auto auto auto;
+        text-align: left;
+        align-items: center;
+        column-gap: 10px;
+        padding: 15px;
+    }
+
+    .level-icon {
+        grid-row: 1 / 4;
+        margin: 0;
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .level-label {
+        margin-bottom: 3px;
+    }
+
+    .level-card h3 {
+        font-size: 21px;
+        margin-bottom: 3px;
+    }
+
+    .level-card p {
+        min-height: auto;
+        margin-bottom: 10px;
+    }
+
+    .level-btn {
+        grid-column: 1 / 3;
+        padding: 12px;
+    }
+
+    .exercise {
+        padding: 19px;
+    }
+
+    .word-card {
+        padding: 32px 10px;
+    }
+
+    .word-card h2 {
+        font-size: 33px;
+    }
+
+    .stat {
+        padding: 12px 9px;
+    }
+
+    .stat span {
+        font-size: 10px;
+    }
+
+    .stat strong {
+        font-size: 19px;
+    }
+
+    footer {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 350px) {
+    .stats {
+        gap: 6px;
+    }
+
+    .stat {
+        padding: 10px 6px;
+    }
+}
